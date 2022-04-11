@@ -68,17 +68,24 @@ class HomePage extends StatelessWidget {
         body: Container(
             padding: EdgeInsets.all(16),
             child: Column(
-              children: const [
-                Text(
+              children: [
+                const Text(
                   "Welcome, Farhanunnasih.",
                   style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
                 ),
-                Divider(),
-                Text(
+                const Divider(),
+                const Text(
                   "Gunakan Bottom Navigation dibawah halaman untuk berganti halaman.",
                   style: TextStyle(fontSize: 24, color: Colors.black54),
                   textAlign: TextAlign.center,
                 ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 24),
+                  child: ElevatedButton(
+                      onPressed: () =>
+                          Navigator.pushReplacementNamed(context, "/login"),
+                      child: const Text("Logout")),
+                )
               ],
             )));
   }
